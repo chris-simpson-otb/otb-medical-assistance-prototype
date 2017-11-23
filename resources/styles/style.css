@@ -24,7 +24,7 @@ p {
 }
 
 .header__logo {
-  background-image: url('../logo.svg');
+  background-image: url('https://static.onthebeach.co.uk/packaged-assets/application/logos/onthebeach/otb-logo-uk-blue-a091160f1e9e75766f2231aaebd73a3417befcd501b1d8dab509c1fe487d00f3.svg');
   background-repeat: no-repeat;
   background-size: 100% auto;
   height: 2.5em;
