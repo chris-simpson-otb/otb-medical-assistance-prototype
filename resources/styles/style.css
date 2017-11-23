@@ -1,8 +1,15 @@
+html {
+  height: 100%;
+}
+
 body {
-  background: url('../images/body.jpg');
+  background: linear-gradient(to bottom, #02abe4 0%, #fff 25em, #fff 100%);
+  background-color: #ffffff;
+  background-repeat: no-repeat;
   color: #313137;
   font: 1.4em/1.5em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100%;
+  height: auto;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -11,13 +18,13 @@ p {
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1em auto 0;
   max-width: 400px;
+  padding: 0 0.5em;
 }
 
 .header__logo {
-  background-image: url('../images/logo.svg');
+  background-image: url('../logo.svg');
   background-repeat: no-repeat;
   background-size: 100% auto;
   height: 2.5em;
