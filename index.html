@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>OTB prototype</title>
+    <title>Special Assistance prototype</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link rel="stylesheet" href="resources/styles/grid.css" /> -->
@@ -17,7 +17,49 @@
       </div>
 
       <div class="main">
-        <p>Content</p>
+        <section class="question-block question-block--grey">
+          <p class="question-block__text">
+            If you have a disability or medical condition requiring special
+            travel, accommodation or dietary arrangements, please complete the
+            below form.
+          </p>
+          <p class="question-block__text">
+            The questions aren't meant to be intrusive.  The information you
+            provide will be treated confidentially and will only be forwarded to
+            your travel operators in order to assist with your requirements.
+          </p>
+          <p class="question-block__text">
+            If you're travelling by air you'll need to provide information about
+            your needs to the airline.  We as your travel agent will forward
+            this information on to your airline.  Failure to provide adequate
+            information could result in you not getting the help you need, and
+            you may even be unable to board the plane.
+          </p>
+        </section>
+
+        <section class="question-block">
+          <h3 class="question-block__title">
+            Please complete this form for each passenger that requires Medical
+            Assistance
+          </h3>
+          <label for="passenger-name" class="question-label">
+            Please select the name of the passenger requiring Medical
+            Assistance.
+          </label>
+          <div class="question-select__wrapper">
+            <select for="passenger-name" class="question-select__select">
+              <option>Bill</option>
+              <option>Ben</option>
+              <option>Bob</option>
+              <option>Bryan<option>
+            </select>
+            <span class="question-select__arrow">></span>
+          </div>
+        </section>
+
+        <section class="question-block">
+          <p class="required-text">* indicates a required field</p>
+        </section>
       </div>
     </div>
   </body>

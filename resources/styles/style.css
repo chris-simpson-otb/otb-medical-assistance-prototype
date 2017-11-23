@@ -1,4 +1,5 @@
 html {
+  font-size: 62.5%;
   height: 100%;
 }
 
@@ -6,7 +7,7 @@ body {
   background: linear-gradient(to bottom, #02abe4 0%, #fff 25em, #fff 100%);
   background-color: #ffffff;
   background-repeat: no-repeat;
-  color: #313137;
+  color: #17317f;
   font: 1.4em/1.5em BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: auto;
   margin: 0;
@@ -14,6 +15,7 @@ body {
 
 h1, h2, h3, h4, h5, h6,
 p {
+  font-size: 1em;
   margin: 0;
 }
 
@@ -27,12 +29,71 @@ p {
   background-image: url('https://static.onthebeach.co.uk/packaged-assets/application/logos/onthebeach/otb-logo-uk-blue-a091160f1e9e75766f2231aaebd73a3417befcd501b1d8dab509c1fe487d00f3.svg');
   background-repeat: no-repeat;
   background-size: 100% auto;
-  height: 2.5em;
-  width: 5em;
+  height: 5em;
+  width: 10em;
 }
 
 .main {
   background-color: #ffffff;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
   padding: 0.5em;
+}
+
+.question-block {
+  margin-bottom: 1em;
+  padding: 0.75em;
+}
+
+.question-block--grey {
+  background-color: #ededed;
+}
+
+.question-block__text {
+  margin-bottom: 1em;
+}
+
+.question-block__title {
+  margin-bottom: 1em;
+}
+
+.question-select__wrapper {
+  margin: 1em 0;
+  position: relative;
+}
+
+.question-select__select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: 1px solid #17317f;
+  border-radius: 0;
+  outline: none;
+  padding: 1em;
+  width: 100%;
+}
+
+.question-select__select:hover {
+  cursor: pointer;
+}
+
+.question-select__arrow {
+  display: -webkit-box;
+  -webkit-align-items: center;
+  align-items: center;
+  background-color: #17317f;
+  color: #ffffff;
+  display: flex;
+  height: 100%;
+  line-height: 1;
+  padding: 0 1em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.required-text {
+  font-size: 0.8em;
+  font-style: italic;
 }
