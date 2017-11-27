@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- <link rel="stylesheet" href="resources/styles/grid.css" /> -->
     <link rel="stylesheet" href="resources/styles/style.css" />
-    <!-- <script src="resources/scripts/script.js"></script> -->
+    <script src="resources/scripts/script.js"></script>
   </head>
   <body>
     <div class="container">
@@ -38,13 +38,13 @@
         </section>
 
         <section class="question-block">
-          <h3 class="question-block__title">
-            Please complete this form for each passenger that requires Medical
-            Assistance
-          </h3>
           <label for="passenger-name" class="question-label">
             Please select the name of the passenger requiring Medical
             Assistance.
+            <span class="question-label__subtext">
+              Please complete this form for each passenger that requires Medical
+              Assistance
+            </span>
           </label>
           <div class="question-select__wrapper">
             <select for="passenger-name" class="question-select__select">
@@ -55,12 +55,412 @@
             </select>
             <span class="question-select__arrow">></span>
           </div>
+          <i>TODO: arrow alignment</i>
+        </section>
+
+        <section class="question-block">
+          <label for="medical-condition" class="question-label">
+            Please provide a full description of your medical condition.
+            <span class="question-label__subtext">
+              If you feel it may be helpful, please give us a name or, if
+              relevant, the medical term for your disability.  If you have a
+              blue badge number please provide it below.
+            </span>
+          </label>
+          <i>TODO: Should blue badge be a separate (optional) question?</i>
+          <textarea class="question-textarea"></textarea>
+        </section>
+
+        <section class="question-block">
+          <label class="question-label">
+            Do you require assistance at the airport or airline
+            assistance, or do you have any airline requests?
+          </label>
+          <div class="radio-wrapper radio-wrapper--button">
+            <input class="radio-question radio-question--button" id="flight-assistance-yes" name="flight-assistance" type="radio" value="yes" />
+            <label class="radio-label--button" for="flight-assistance-yes">Yes</label>
+            <input class="radio-question radio-question--button" id="flight-assistance-no" name="flight-assistance" type="radio" value="no" />
+            <label class="radio-label--button" for="flight-assistance-no">No</label>
+          </div>
+        </section>
+
+        <section id="flights-panel">
+          <section class="question-block">
+            <label class="question-label">
+              Can you walk more than 500 metres without assistance?
+              <span class="question-label__subtext">
+                For example, although you may not need assistance all the time,
+                some distances at the airport terminal can be long - between,
+                say, the airline check-in-desk and the departure gate - or you
+                may need more time that most to get from one place to another.
+              </span>
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="long-distance-yes" name="long-distance" type="radio" value="yes" />
+              <label for="long-distance-yes">Yes</label>
+              <input class="radio-question" id="long-distance-no" name="long-distance" type="radio" value="no" />
+              <label for="long-distance-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Will you be taking your own wheelchair?
+            </label>
+            <div class="radio-wrapper radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="wheelchair-yes" name="wheelchair" type="radio" value="yes" />
+              <label class="radio-label--button" for="wheelchair-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="wheelchair-no" name="wheelchair" type="radio" value="no" />
+              <label class="radio-label--button" for="wheelchair-no">No</label>
+            </div>
+          </section>
+
+          <section id="wheelchair-panel">
+            <section class="question-block">
+              <label class="question-label">
+                Is it battery powered?
+                <span class="question-label__subtext">
+                  They need to know the type of battery that's fitted to the
+                  wheelchair to ensure the safety of the flight.  You should
+                  remove the control box from the wheelchair and carry it in your
+                  hand luggage to avoid any risk of it being lost or damaged.
+                </span>
+              </label>
+              <div class="radio-wrapper">
+                <input class="radio-question" id="battery-powered-dry" name="battery-powered" type="radio" value="dry" />
+                <label for="battery-powered-dry">Yes - Dry cell</label>
+                <input class="radio-question" id="battery-powered-wet" name="battery-powered" type="radio" value="wet" />
+                <label for="battery-powered-wet">Yes - Wet cell</label>
+                <input class="radio-question" id="battery-powered-no" name="battery-powered" type="radio" value="no" />
+                <label for="battery-powered-no">No</label>
+              </div>
+            </section>
+
+            <section class="question-block">
+              <label class="question-label">
+                Does it fold up?
+              </label>
+              <div class="radio-wrapper">
+                <input class="radio-question" id="foldable-yes" name="foldable" type="radio" value="yes" />
+                <label for="foldable-yes">Yes</label>
+                <input class="radio-question" id="foldable-no" name="foldable" type="radio" value="no" />
+                <label for="foldable-no">No</label>
+              </div>
+            </section>
+
+            <section class="question-block">
+              <label class="question-label">
+                What is the make and model of your wheelchair?
+              </label>
+              <div class="input-wrapper">
+                <input class="question-input" type="text" placeholder="Make" />
+                <input class="question-input" type="text" placeholder="Model" />
+              </div>
+            </section>
+
+            <section class="question-block">
+              <label class="question-label">
+                Please provide dimensions and weight.
+              </label>
+              <label class="question-label">
+                Open:
+              </label>
+              <div class="input-wrapper">
+                <input class="question-input" type="text" placeholder="Width (cm)" />
+                <input class="question-input" type="text" placeholder="Height (cm)" />
+                <input class="question-input" type="text" placeholder="Depth (cm)" />
+              </div>
+            </section>
+
+            <section class="question-block">
+              <label class="question-label">
+                Closed:
+              </label>
+              <div class="input-wrapper">
+                <input class="question-input" type="text" placeholder="Width (cm)" />
+                <input class="question-input" type="text" placeholder="Height (cm)" />
+                <input class="question-input" type="text" placeholder="Depth (cm)" />
+              </div>
+            </section>
+
+            <section class="question-block">
+              <label class="question-label">
+                Weight (kg):
+              </label>
+              <div class="input-wrapper">
+                <input class="question-input" type="text" />
+              </div>
+            </section>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Do you need to borrow a wheelchair to and from the aircraft?
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="aircraft-assistance-yes" name="aircraft-assistance" type="radio" value="yes" />
+              <label for="aircraft-assistance-yes">Yes</label>
+              <input class="radio-question" id="aircraft-assistance-no" name="aircraft-assistance" type="radio" value="no" />
+              <label for="aircraft-assistance-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Can you walk up and down the aircraft steps without assistance?
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="aircraft-steps-yes" name="aircraft-steps" type="radio" value="yes" />
+              <label for="aircraft-steps-yes">Yes</label>
+              <input class="radio-question" id="aircraft-steps-no" name="aircraft-steps" type="radio" value="no" />
+              <label for="aircraft-steps-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Do you require a wheelchair to visit the WC on board the aircraft?
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="aircraft-wc-yes" name="aircraft-wc" type="radio" value="yes" />
+              <label for="aircraft-wc-yes">Yes</label>
+              <input class="radio-question" id="aircraft-wc-no" name="aircraft-wc" type="radio" value="no" />
+              <label for="aircraft-wc-no">No</label>
+            </div>
+
+            <p class="question-block__text question-block__text--margin-before">
+              There are a number of activities shown below that cabin crew
+              can't assist you with.  So if you're unable to do these on your
+              own, you may be required to travel with a companion who can
+              help you.
+              <i>Should this be at the bottom of the flights section?</i>
+            </p>
+
+            <ul class="question-label__list">
+              <li>Breathe without supplementary oxygen</li>
+              <li>Feed yourself</li>
+              <li>Use the toilet facilities</li>
+              <li>Lift yourself in and out of your seat</li>
+              <li>Administer your own medication</li>
+              <li>Escape from the aircraft in an emergency</li>
+            </ul>
+
+            <div class="checkbox-wrapper">
+              <input class="question-checkbox" id="flight-assistance-disclaimer" type="checkbox">
+              <label for="flight-assistance-disclaimer">
+                Tick to agree that you can undertake these activities yourself or
+                that you will have a travelling companion who can assist you.
+              </label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Is it best for you to sit near to the WC?
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="near-wc-yes" name="near-wc" type="radio" value="yes" />
+              <label for="near-wc-yes">Yes</label>
+              <input class="radio-question" id="near-wc-no" name="near-wc" type="radio" value="no" />
+              <label for="near-wc-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Is it best for you to have an aisle seat?
+              <span class="question-label__subtext">
+                Airlines must make all reasonable efforts to arrange seating and
+                meet your needs because of your disability on request and
+                subject to safety requirements and availability.
+              </span>
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="aisle-seat-yes" name="aisle-seat" type="radio" value="yes" />
+              <label for="aisle-seat-yes">Yes</label>
+              <input class="radio-question" id="aisle-seat-no" name="aisle-seat" type="radio" value="no" />
+              <label for="aisle-seat-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Will you be taking medication with you?
+              <span class="question-label__subtext">
+                Gels, liquids and medication requiring needles to administer may
+                be subject to additional security restrictions, particularly at
+                airports.  If you need to have these with you on board you may
+                need to carry authorisation from your doctor
+              </span>
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="medication-yes" name="medication" type="radio" value="yes" />
+              <label for="medication-yes">Yes</label>
+              <input class="radio-question" id="medication-no" name="medication" type="radio" value="no" />
+              <label for="medication-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block question-block--no-top-padding" id="medical-luggage-panel">
+            <p class="question-block__text">
+              If you will be carrying additional medical luggage, please provide
+              the weight and dimensions of the bag and its contents.
+            </p>
+            <textarea class="question-textarea"></textarea>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Will you be taking medical or other equipment to assist you?
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="medical-equip-yes" name="medical-equip" type="radio" value="yes" />
+              <label for="medical-equip-yes">Yes</label>
+              <input class="radio-question" id="medical-equip-no" name="medical-equip" type="radio" value="no" />
+              <label for="medical-equip-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block question-block--no-padding" id="medical-equipment-panel">
+            <p class="question-block__text">
+              If yes, provide further information
+            </p>
+            <textarea class="question-textarea"></textarea>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Are you likely to require supplementary oxygen?
+              <span class="question-label__subtext">
+                There may be a charge for supplementary oxygen
+              </span>
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="oxygen-yes" name="oxygen" type="radio" value="yes" />
+              <label for="oxygen-yes">Yes</label>
+              <input class="radio-question" id="oxygen-no" name="oxygen" type="radio" value="no" />
+              <label for="oxygen-no">No</label>
+            </div>
+          </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Are you travelling with any kind of assistance dog?
+              <span class="question-label__subtext">
+                You must make sure that the dog has been microchipped, processed
+                and immunised against rabies in accordance with the Pet Passport
+                scheme - check with the Guide Dogs for the Blind Association,
+                telephone: <a class="question-label__link" href="tel:+01189825555">01189 825 555</a>.
+                A guide is available for download at the
+                <a class="question-label__link" href="http://www.guidedogs.org.uk/" target="blank" rel="noopener">
+                Guide Dogs for the Blind Association website</a>
+              </span>
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="assistance-dog-yes" name="assistance-dog" type="radio" value="yes" />
+              <label for="assistance-dog-yes">Yes</label>
+              <input class="radio-question" id="assistance-dogs-no" name="assistance-dog" type="radio" value="no" />
+              <label for="assistance-dogs-no">No</label>
+            </div>
+          </section>
+        </section>
+
+        <section class="question-block">
+          <label class="question-label">
+            Do you require assistance at your accommodation?
+          </label>
+          <div class="radio-wrapper radio-wrapper--button">
+            <input class="radio-question radio-question--button" id="accom-assistance-yes" name="accom-assistance" type="radio" value="yes" />
+            <label class="radio-label--button" for="accom-assistance-yes">Yes</label>
+            <input class="radio-question radio-question--button" id="accom-assistance-no" name="accom-assistance" type="radio" value="no" />
+            <label class="radio-label--button" for="accom-assistance-no">No</label>
+          </div>
+        </section>
+
+        <section id="accommodation-panel">
+          <section class="question-block">
+            <label class="question-label">
+              Accommodation.
+              <span class="question-label__subtext">
+                If you have accomodation booked with us, we trust that you have
+                researched and confirmed its suitability prior to booking.  All
+                requirements are on a request basis only and subject to
+                availability, therefore we are unable to guarantee all requests.
+              </span>
+              <span class="question-label__subtext">
+                Do you have any requests specific to your medical needs for your
+                hotel?
+              </span>
+            </label>
+            <div class="radio-wrapper">
+              <input class="radio-question" id="accom-request-yes" name="accom-request" type="radio" value="yes" />
+              <label for="accom-request-yes">Yes</label>
+              <input class="radio-question" id="accom-request-no" name="accom-request" type="radio" value="no" />
+              <label for="accom-request-no">No</label>
+            </div>
+            <textarea class="question-textarea" id="accom-textarea"></textarea>
+          </section>
+        </section>
+
+        <section class="question-block">
+          <h3 class="question-block__title">Important customer information</h3>
+          <p class="question-block__text">
+            This information will be passed on to your travel suppliers, who
+            will do their best to meet your needs.  However it's very important
+            to remember that:
+          </p>
+
+          <ul class="question-label__list">
+            <li>
+              Meeting your needs can't always be guaranteed.  For example,
+              planes, coaches and other elements of your travel may need to be
+              substituted without prior notification due to unforeseen
+              circumstances (eg breakdown, cancellation or non-availability of
+              accommodation).
+            </li>
+            <li>
+              Safety and security restrictions mean you may be limited in what
+              you can take on board with you.
+            </li>
+            <li>
+              Please be aware that airline policy dictates that extra legroom
+              seats, which are typically situated near emergency exits, must be
+              occupied by able bodied persons.
+            </li>
+          </ul>
+
+          <p class="question-block__text">
+            Make sure your travel insurance policy adequately covers any
+            pre-existing medical conditions and any expensive equipment you may
+            be taking.  Mobility and other equipment will be classified as
+            baggage and is subject to legal limits on compensation you can claim
+            in the event of damage or loss.  This may not, however, be adequate
+            to replace missing items, so insurance cover for your important and
+            valuable equipment is crucial, as is the need to plan in case things
+            are lost or delayed.
+          </p>
+
+          <p class="question-block__text">
+            It's important to read the ABTA and Foreign &amp; Commenwealth
+            Office Information at Accessible Travel.  Guidance for disabled and
+            less mobile passengers has also been produced by the Department for
+            Transport to accompany the DFT Air Access Code.  You can find both
+            at the Department of Transport website.
+            <i>TODO: should this be link?</i>
+          </p>
         </section>
 
         <section class="question-block">
           <p class="required-text">* indicates a required field</p>
         </section>
       </div>
+
+      <section class="button-wrapper">
+        <button class="button">Save and start new request</button>
+        <p class="button-extra-text">or</p>
+        <button class="button">Submit single request</button>
+      </section>
+
     </div>
   </body>
 </html>
