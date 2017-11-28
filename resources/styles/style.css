@@ -44,16 +44,18 @@ p {
 
 /* question block */
 .question-block {
-  margin-bottom: 1em;
+  border-bottom: 1px solid #ededed;
   padding: 1em;
 }
 
 .question-block--grey {
   background-color: #ededed;
+  transition: background 0.1s ease-in;
 }
 
-.question-block--no-top-padding {
-  padding-top: 0;
+.question-block--blue {
+  background-color: #d5eff9;
+  margin-bottom: 1em;
 }
 
 .question-block__title {
@@ -65,6 +67,10 @@ p {
 }
 
 .question-block__text--margin-before {
+  margin-top: 1em;
+}
+
+.question-block__subpanel {
   margin-top: 1em;
 }
 
@@ -137,10 +143,12 @@ p {
   position: absolute;
   right: 0;
   top: 0;
+  transform: rotate(90deg);
 }
 
 .question-textarea {
   border-color: #17317f;
+  border-radius: 0;
   box-sizing: border-box;
   margin-top: 1em;
   min-height: 250px;
@@ -167,7 +175,9 @@ p {
   -webkit-appearance: none;
   -webkit-align-items: center;
   align-items: center;
+  background-color: #ffffff;
   border: 1px solid #17317f;
+  border-radius: 0;
   display: -webkit-inline-box;
   display: inline-flex;
   font-size: 1.1em;
@@ -193,7 +203,8 @@ p {
 }
 
 .radio-question--button:checked + .radio-label--button {
-  background-color: #0091c2;
+  background-color: #17317f;
+  border-color: #17317f;
 }
 
 .radio-label--button {
@@ -208,7 +219,8 @@ p {
 }
 
 .radio-label--button:hover {
-  background-color: #0091c2;
+  background-color: #17317f;
+  border-color: #17317f;
   cursor: pointer;
 }
 
@@ -339,6 +351,10 @@ p {
   height: auto;
 }
 
+#wheelchair-panel {
+  background-color: #ededed;
+}
+
 /* hidden textareas */
 #accom-textarea {
   position: absolute;
@@ -350,10 +366,4 @@ p {
   position: static;
   opacity: 1;
   transition: all 0.3s ease-in;
-}
-
-/* other */
-.required-text {
-  font-size: 0.8em;
-  font-style: italic;
 }

@@ -7,61 +7,68 @@ window.onload = function() {
   var expandablePanels = [
     {
       panel: accomodationPanel,
-      yes: 'accom-assistance-yes',
-      no: 'accom-assistance-no',
+      yes: document.getElementById('accom-assistance-yes'),
+      no: document.getElementById('accom-assistance-no'),
     },
     {
       panel: flightPanel,
-      yes: 'flight-assistance-yes',
-      no: 'flight-assistance-no',
+      yes: document.getElementById('flight-assistance-yes'),
+      no: document.getElementById('flight-assistance-no'),
     },
     {
       panel: wheelchairPanel,
-      yes: 'wheelchair-yes',
-      no: 'wheelchair-no',
+      yes: document.getElementById('wheelchair-yes'),
+      no: document.getElementById('wheelchair-no'),
     },
   ];
 
   expandablePanels.forEach(function(element) {
-    document.getElementById(element.yes).addEventListener('change', function(event) {
+    element.yes.addEventListener('change', function(event) {
       if (event.currentTarget.checked) {
         element.panel.classList = 'expanded';
+        element.yes.parentElement.parentElement.classList.add('question-block--grey');
       }
     }, false);
-    document.getElementById(element.no).addEventListener('change', function(event) {
+    element.no.addEventListener('change', function(event) {
       if (event.currentTarget.checked) {
         element.panel.classList = '';
+        element.no.parentElement.parentElement.classList.remove('question-block--grey');
       }
     }, false);
   });
 
   var showHideFields = [
     {
-      inputTrigger: document.querySelectorAll('input[name="accom-request"]'),
-      textArea: document.getElementById('accom-textarea'),
+      field: document.getElementById('accom-textarea'),
+      yes: document.getElementById('accom-request-yes'),
+      no: document.getElementById('accom-request-no'),
     },
     {
-      inputTrigger: document.querySelectorAll('input[name="medication"]'),
-      textArea: document.getElementById('medical-luggage-panel'),
+      field: document.getElementById('medical-luggage-panel'),
+      yes: document.getElementById('medication-yes'),
+      no: document.getElementById('medication-no'),
     },
     {
-      inputTrigger: document.querySelectorAll('input[name="medical-equip"]'),
-      textArea: document.getElementById('medical-equipment-panel'),
+      field: document.getElementById('medical-equipment-panel'),
+      yes: document.getElementById('medical-equip-yes'),
+      no: document.getElementById('medical-equip-no'),
     },
   ];
 
   showHideFields.forEach(function(element) {
-    this.textArea = element.textArea;
-    element.inputTrigger.forEach(function(input) {
-      debugger;
-      input.addEventListener('change', function() {
-        if (event.currentTarget.value === 'yes') {
-          textArea.classList.add('expanded');
-        } else {
-          textArea.classList.remove('expanded');
-        }
-      });
-    }.bind(this));
+    element.yes.addEventListener('change', function(event) {
+      if (event.currentTarget.checked) {
+        element.field.classList.add('expanded');
+      }
+    }, false);
+    element.no.addEventListener('change', function(event) {
+      if (event.currentTarget.checked) {
+        element.field.classList.remove('expanded');
+      }
+    });
   });
 
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
 };

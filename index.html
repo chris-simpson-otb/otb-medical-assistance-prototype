@@ -6,7 +6,6 @@
     <title>Special Assistance prototype</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <link rel="stylesheet" href="resources/styles/grid.css" /> -->
     <link rel="stylesheet" href="resources/styles/style.css" />
     <script src="resources/scripts/script.js"></script>
   </head>
@@ -55,7 +54,6 @@
             </select>
             <span class="question-select__arrow">></span>
           </div>
-          <i>TODO: arrow alignment</i>
         </section>
 
         <section class="question-block">
@@ -71,7 +69,7 @@
           <textarea class="question-textarea"></textarea>
         </section>
 
-        <section class="question-block">
+        <section class="question-block question-block--blue">
           <label class="question-label">
             Do you require assistance at the airport or airline
             assistance, or do you have any airline requests?
@@ -227,31 +225,6 @@
               <input class="radio-question" id="aircraft-wc-no" name="aircraft-wc" type="radio" value="no" />
               <label for="aircraft-wc-no">No</label>
             </div>
-
-            <p class="question-block__text question-block__text--margin-before">
-              There are a number of activities shown below that cabin crew
-              can't assist you with.  So if you're unable to do these on your
-              own, you may be required to travel with a companion who can
-              help you.
-              <i>Should this be at the bottom of the flights section?</i>
-            </p>
-
-            <ul class="question-label__list">
-              <li>Breathe without supplementary oxygen</li>
-              <li>Feed yourself</li>
-              <li>Use the toilet facilities</li>
-              <li>Lift yourself in and out of your seat</li>
-              <li>Administer your own medication</li>
-              <li>Escape from the aircraft in an emergency</li>
-            </ul>
-
-            <div class="checkbox-wrapper">
-              <input class="question-checkbox" id="flight-assistance-disclaimer" type="checkbox">
-              <label for="flight-assistance-disclaimer">
-                Tick to agree that you can undertake these activities yourself or
-                that you will have a travelling companion who can assist you.
-              </label>
-            </div>
           </section>
 
           <section class="question-block">
@@ -299,14 +272,14 @@
               <input class="radio-question" id="medication-no" name="medication" type="radio" value="no" />
               <label for="medication-no">No</label>
             </div>
-          </section>
 
-          <section class="question-block question-block--no-top-padding" id="medical-luggage-panel">
-            <p class="question-block__text">
-              If you will be carrying additional medical luggage, please provide
-              the weight and dimensions of the bag and its contents.
-            </p>
-            <textarea class="question-textarea"></textarea>
+            <div class="question-block__subpanel" id="medical-luggage-panel">
+              <p class="question-block__text">
+                If you will be carrying additional medical luggage, please provide
+                the weight and dimensions of the bag and its contents.
+              </p>
+              <textarea class="question-textarea"></textarea>
+            </div>
           </section>
 
           <section class="question-block">
@@ -319,13 +292,13 @@
               <input class="radio-question" id="medical-equip-no" name="medical-equip" type="radio" value="no" />
               <label for="medical-equip-no">No</label>
             </div>
-          </section>
 
-          <section class="question-block question-block--no-padding" id="medical-equipment-panel">
-            <p class="question-block__text">
-              If yes, provide further information
-            </p>
-            <textarea class="question-textarea"></textarea>
+            <div class="question-block__subpanel" id="medical-equipment-panel">
+              <p class="question-block__text">
+                If yes, provide further information
+              </p>
+              <textarea class="question-textarea"></textarea>
+            </div>
           </section>
 
           <section class="question-block">
@@ -363,9 +336,38 @@
               <label for="assistance-dogs-no">No</label>
             </div>
           </section>
+
+          <section class="question-block">
+            <label class="question-label">
+              Some title here <i>TODO</i>
+            </label>
+            <p class="question-block__text">
+              There are a number of activities shown below that cabin crew
+              can't assist you with.  So if you're unable to do these on your
+              own, you may be required to travel with a companion who can
+              help you.
+            </p>
+
+            <ul class="question-label__list">
+              <li>Breathe without supplementary oxygen</li>
+              <li>Feed yourself</li>
+              <li>Use the toilet facilities</li>
+              <li>Lift yourself in and out of your seat</li>
+              <li>Administer your own medication</li>
+              <li>Escape from the aircraft in an emergency</li>
+            </ul>
+
+            <div class="checkbox-wrapper">
+              <input class="question-checkbox" id="flight-assistance-disclaimer" type="checkbox">
+              <label for="flight-assistance-disclaimer">
+                Tick to agree that you can undertake these activities yourself or
+                that you will have a travelling companion who can assist you.
+              </label>
+            </div>
+          </section>
         </section>
 
-        <section class="question-block">
+        <section class="question-block question-block--blue">
           <label class="question-label">
             Do you require assistance at your accommodation?
           </label>
@@ -402,7 +404,7 @@
           </section>
         </section>
 
-        <section class="question-block">
+        <section class="question-block question-block--grey">
           <h3 class="question-block__title">Important customer information</h3>
           <p class="question-block__text">
             This information will be passed on to your travel suppliers, who
@@ -441,26 +443,41 @@
           </p>
 
           <p class="question-block__text">
-            It's important to read the ABTA and Foreign &amp; Commenwealth
+            It's important to read the ABTA and Foreign &amp; Commonwealth
             Office Information at Accessible Travel.  Guidance for disabled and
             less mobile passengers has also been produced by the Department for
             Transport to accompany the DFT Air Access Code.  You can find both
             at the Department of Transport website.
-            <i>TODO: should this be link?</i>
           </p>
-        </section>
-
-        <section class="question-block">
-          <p class="required-text">* indicates a required field</p>
         </section>
       </div>
 
       <section class="button-wrapper">
-        <button class="button">Save and start new request</button>
+        <a class="button" href="#">
+          Save and start new request
+        </a>
         <p class="button-extra-text">or</p>
-        <button class="button">Submit single request</button>
+        <a class="button" href="https://www.onthebeach.co.uk/">
+          Submit single request
+        </a>
       </section>
 
     </div>
+
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous">
+    </script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+      integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+      crossorigin="anonymous">
+    </script> -->
   </body>
 </html>
