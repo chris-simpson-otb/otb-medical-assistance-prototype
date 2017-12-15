@@ -61,11 +61,10 @@
             Please provide a full description of your medical condition.
             <span class="question-label__subtext">
               If you feel it may be helpful, please give us a name or, if
-              relevant, the medical term for your disability.  If you have a
-              blue badge number please provide it below.
+              relevant, the medical term for your disability.  Please also
+              include details of any allergies you may have.
             </span>
           </label>
-          <i>TODO: Should blue badge be a separate (optional) question?</i>
           <textarea class="question-textarea"></textarea>
         </section>
 
@@ -93,149 +92,153 @@
                 may need more time that most to get from one place to another.
               </span>
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="long-distance-yes" name="long-distance" type="radio" value="yes" />
-              <label for="long-distance-yes">Yes</label>
-              <input class="radio-question" id="long-distance-no" name="long-distance" type="radio" value="no" />
-              <label for="long-distance-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="long-distance-yes" name="long-distance" type="radio" value="yes" />
+              <label class="radio-label--button" for="long-distance-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="long-distance-no" name="long-distance" type="radio" value="no" />
+              <label class="radio-label--button" for="long-distance-no">No</label>
             </div>
           </section>
 
-          <section class="question-block">
-            <label class="question-label">
-              Will you be taking your own wheelchair?
-            </label>
-            <div class="radio-wrapper radio-wrapper--button">
-              <input class="radio-question radio-question--button" id="wheelchair-yes" name="wheelchair" type="radio" value="yes" />
-              <label class="radio-label--button" for="wheelchair-yes">Yes</label>
-              <input class="radio-question radio-question--button" id="wheelchair-no" name="wheelchair" type="radio" value="no" />
-              <label class="radio-label--button" for="wheelchair-no">No</label>
-            </div>
-          </section>
-
-          <section id="wheelchair-panel">
+          <section id="wheelchair-panel-wrapper">
             <section class="question-block">
               <label class="question-label">
-                Is it battery powered?
-                <span class="question-label__subtext">
-                  They need to know the type of battery that's fitted to the
-                  wheelchair to ensure the safety of the flight.  You should
-                  remove the control box from the wheelchair and carry it in your
-                  hand luggage to avoid any risk of it being lost or damaged.
-                </span>
+                Will you be taking your own wheelchair?
               </label>
-              <div class="radio-wrapper">
-                <input class="radio-question" id="battery-powered-dry" name="battery-powered" type="radio" value="dry" />
-                <label for="battery-powered-dry">Yes - Dry cell</label>
-                <input class="radio-question" id="battery-powered-wet" name="battery-powered" type="radio" value="wet" />
-                <label for="battery-powered-wet">Yes - Wet cell</label>
-                <input class="radio-question" id="battery-powered-no" name="battery-powered" type="radio" value="no" />
-                <label for="battery-powered-no">No</label>
+              <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+                <input class="radio-question radio-question--button" id="wheelchair-yes" name="wheelchair" type="radio" value="yes" />
+                <label class="radio-label--button" for="wheelchair-yes">Yes</label>
+                <input class="radio-question radio-question--button" id="wheelchair-no" name="wheelchair" type="radio" value="no" />
+                <label class="radio-label--button" for="wheelchair-no">No</label>
+              </div>
+            </section>
+
+            <section id="wheelchair-panel">
+              <section class="question-block">
+                <label class="question-label">
+                  Is it battery powered?
+                  <span class="question-label__subtext">
+                    They need to know the type of battery that's fitted to the
+                    wheelchair to ensure the safety of the flight.  You should
+                    remove the control box from the wheelchair and carry it in your
+                    hand luggage to avoid any risk of it being lost or damaged.
+                  </span>
+                </label>
+                <div class="radio-wrapper radio-wrapper--button">
+                  <input class="radio-question radio-question--button" id="battery-powered-dry" name="battery-powered" type="radio" value="dry" />
+                  <label class="radio-label--button" for="battery-powered-dry">Yes - Dry cell</label>
+                  <input class="radio-question radio-question--button" id="battery-powered-wet" name="battery-powered" type="radio" value="wet" />
+                  <label class="radio-label--button" for="battery-powered-wet">Yes - Wet cell</label>
+                  <input class="radio-question radio-question--button" id="battery-powered-no" name="battery-powered" type="radio" value="no" />
+                  <label class="radio-label--button" for="battery-powered-no">No</label>
+                </div>
+              </section>
+
+              <section class="question-block">
+                <label class="question-label">
+                  What is the make and model of your wheelchair?
+                </label>
+                <div class="input-wrapper">
+                  <input class="question-input" type="text" placeholder="Make" />
+                  <input class="question-input" type="text" placeholder="Model" />
+                </div>
+              </section>
+
+              <section class="question-block">
+                <label class="question-label">
+                  Does it fold up?
+                </label>
+                <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+                  <input class="radio-question radio-question--button" id="foldable-yes" name="foldable" type="radio" value="yes" />
+                  <label class="radio-label--button" for="foldable-yes">Yes</label>
+                  <input class="radio-question radio-question--button" id="foldable-no" name="foldable" type="radio" value="no" />
+                  <label class="radio-label--button" for="foldable-no">No</label>
+                </div>
+              </section>
+
+              <section id="wheelchair-dimension-panel">
+                <section class="question-block">
+                  <label class="question-label">
+                    Please provide dimensions and weight.
+                  </label>
+                  <label class="question-label">
+                    Open:
+                  </label>
+                  <div class="input-wrapper">
+                    <input class="question-input" type="text" placeholder="Width (cm)" />
+                    <input class="question-input" type="text" placeholder="Height (cm)" />
+                    <input class="question-input" type="text" placeholder="Depth (cm)" />
+                  </div>
+                </section>
+
+                <section class="question-block">
+                  <label class="question-label">
+                    Closed:
+                  </label>
+                  <div class="input-wrapper">
+                    <input class="question-input" type="text" placeholder="Width (cm)" />
+                    <input class="question-input" type="text" placeholder="Height (cm)" />
+                    <input class="question-input" type="text" placeholder="Depth (cm)" />
+                  </div>
+                </section>
+
+                <section class="question-block">
+                  <label class="question-label">
+                    Weight (kg):
+                  </label>
+                  <div class="input-wrapper">
+                    <input class="question-input" type="text" />
+                  </div>
+                </section>
+              </section>
+            </section>
+
+            <section class="question-block">
+              <label class="question-label">
+                Do you need to borrow a wheelchair to and from the aircraft?
+              </label>
+              <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+                <input class="radio-question radio-question--button" id="aircraft-assistance-yes" name="aircraft-assistance" type="radio" value="yes" />
+                <label class="radio-label--button" for="aircraft-assistance-yes">Yes</label>
+                <input class="radio-question radio-question--button" id="aircraft-assistance-no" name="aircraft-assistance" type="radio" value="no" />
+                <label class="radio-label--button" for="aircraft-assistance-no">No</label>
               </div>
             </section>
 
             <section class="question-block">
               <label class="question-label">
-                Does it fold up?
+                Can you walk up and down the aircraft steps without assistance?
               </label>
-              <div class="radio-wrapper">
-                <input class="radio-question" id="foldable-yes" name="foldable" type="radio" value="yes" />
-                <label for="foldable-yes">Yes</label>
-                <input class="radio-question" id="foldable-no" name="foldable" type="radio" value="no" />
-                <label for="foldable-no">No</label>
+              <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+                <input class="radio-question radio-question--button" id="aircraft-steps-yes" name="aircraft-steps" type="radio" value="yes" />
+                <label class="radio-label--button" for="aircraft-steps-yes">Yes</label>
+                <input class="radio-question radio-question--button" id="aircraft-steps-no" name="aircraft-steps" type="radio" value="no" />
+                <label class="radio-label--button" for="aircraft-steps-no">No</label>
               </div>
             </section>
 
             <section class="question-block">
               <label class="question-label">
-                What is the make and model of your wheelchair?
+                Do you require a wheelchair to visit the WC on board the aircraft?
               </label>
-              <div class="input-wrapper">
-                <input class="question-input" type="text" placeholder="Make" />
-                <input class="question-input" type="text" placeholder="Model" />
+              <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+                <input class="radio-question radio-question--button" id="aircraft-wc-yes" name="aircraft-wc" type="radio" value="yes" />
+                <label class="radio-label--button" for="aircraft-wc-yes">Yes</label>
+                <input class="radio-question radio-question--button" id="aircraft-wc-no" name="aircraft-wc" type="radio" value="no" />
+                <label class="radio-label--button" for="aircraft-wc-no">No</label>
               </div>
             </section>
-
-            <section class="question-block">
-              <label class="question-label">
-                Please provide dimensions and weight.
-              </label>
-              <label class="question-label">
-                Open:
-              </label>
-              <div class="input-wrapper">
-                <input class="question-input" type="text" placeholder="Width (cm)" />
-                <input class="question-input" type="text" placeholder="Height (cm)" />
-                <input class="question-input" type="text" placeholder="Depth (cm)" />
-              </div>
-            </section>
-
-            <section class="question-block">
-              <label class="question-label">
-                Closed:
-              </label>
-              <div class="input-wrapper">
-                <input class="question-input" type="text" placeholder="Width (cm)" />
-                <input class="question-input" type="text" placeholder="Height (cm)" />
-                <input class="question-input" type="text" placeholder="Depth (cm)" />
-              </div>
-            </section>
-
-            <section class="question-block">
-              <label class="question-label">
-                Weight (kg):
-              </label>
-              <div class="input-wrapper">
-                <input class="question-input" type="text" />
-              </div>
-            </section>
-          </section>
-
-          <section class="question-block">
-            <label class="question-label">
-              Do you need to borrow a wheelchair to and from the aircraft?
-            </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="aircraft-assistance-yes" name="aircraft-assistance" type="radio" value="yes" />
-              <label for="aircraft-assistance-yes">Yes</label>
-              <input class="radio-question" id="aircraft-assistance-no" name="aircraft-assistance" type="radio" value="no" />
-              <label for="aircraft-assistance-no">No</label>
-            </div>
-          </section>
-
-          <section class="question-block">
-            <label class="question-label">
-              Can you walk up and down the aircraft steps without assistance?
-            </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="aircraft-steps-yes" name="aircraft-steps" type="radio" value="yes" />
-              <label for="aircraft-steps-yes">Yes</label>
-              <input class="radio-question" id="aircraft-steps-no" name="aircraft-steps" type="radio" value="no" />
-              <label for="aircraft-steps-no">No</label>
-            </div>
-          </section>
-
-          <section class="question-block">
-            <label class="question-label">
-              Do you require a wheelchair to visit the WC on board the aircraft?
-            </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="aircraft-wc-yes" name="aircraft-wc" type="radio" value="yes" />
-              <label for="aircraft-wc-yes">Yes</label>
-              <input class="radio-question" id="aircraft-wc-no" name="aircraft-wc" type="radio" value="no" />
-              <label for="aircraft-wc-no">No</label>
-            </div>
           </section>
 
           <section class="question-block">
             <label class="question-label">
               Is it best for you to sit near to the WC?
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="near-wc-yes" name="near-wc" type="radio" value="yes" />
-              <label for="near-wc-yes">Yes</label>
-              <input class="radio-question" id="near-wc-no" name="near-wc" type="radio" value="no" />
-              <label for="near-wc-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="near-wc-yes" name="near-wc" type="radio" value="yes" />
+              <label class="radio-label--button" for="near-wc-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="near-wc-no" name="near-wc" type="radio" value="no" />
+              <label class="radio-label--button" for="near-wc-no">No</label>
             </div>
           </section>
 
@@ -248,11 +251,11 @@
                 subject to safety requirements and availability.
               </span>
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="aisle-seat-yes" name="aisle-seat" type="radio" value="yes" />
-              <label for="aisle-seat-yes">Yes</label>
-              <input class="radio-question" id="aisle-seat-no" name="aisle-seat" type="radio" value="no" />
-              <label for="aisle-seat-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="aisle-seat-yes" name="aisle-seat" type="radio" value="yes" />
+              <label class="radio-label--button" for="aisle-seat-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="aisle-seat-no" name="aisle-seat" type="radio" value="no" />
+              <label class="radio-label--button" for="aisle-seat-no">No</label>
             </div>
           </section>
 
@@ -266,11 +269,11 @@
                 need to carry authorisation from your doctor
               </span>
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="medication-yes" name="medication" type="radio" value="yes" />
-              <label for="medication-yes">Yes</label>
-              <input class="radio-question" id="medication-no" name="medication" type="radio" value="no" />
-              <label for="medication-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="medication-yes" name="medication" type="radio" value="yes" />
+              <label class="radio-label--button" for="medication-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="medication-no" name="medication" type="radio" value="no" />
+              <label class="radio-label--button" for="medication-no">No</label>
             </div>
 
             <div class="question-block__subpanel" id="medical-luggage-panel">
@@ -286,16 +289,16 @@
             <label class="question-label">
               Will you be taking medical or other equipment to assist you?
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="medical-equip-yes" name="medical-equip" type="radio" value="yes" />
-              <label for="medical-equip-yes">Yes</label>
-              <input class="radio-question" id="medical-equip-no" name="medical-equip" type="radio" value="no" />
-              <label for="medical-equip-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="medical-equip-yes" name="medical-equip" type="radio" value="yes" />
+              <label class="radio-label--button" for="medical-equip-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="medical-equip-no" name="medical-equip" type="radio" value="no" />
+              <label class="radio-label--button" for="medical-equip-no">No</label>
             </div>
 
             <div class="question-block__subpanel" id="medical-equipment-panel">
               <p class="question-block__text">
-                If yes, provide further information
+                If yes, please provide further information
               </p>
               <textarea class="question-textarea"></textarea>
             </div>
@@ -308,11 +311,11 @@
                 There may be a charge for supplementary oxygen
               </span>
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="oxygen-yes" name="oxygen" type="radio" value="yes" />
-              <label for="oxygen-yes">Yes</label>
-              <input class="radio-question" id="oxygen-no" name="oxygen" type="radio" value="no" />
-              <label for="oxygen-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="oxygen-yes" name="oxygen" type="radio" value="yes" />
+              <label class="radio-label--button" for="oxygen-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="oxygen-no" name="oxygen" type="radio" value="no" />
+              <label class="radio-label--button" for="oxygen-no">No</label>
             </div>
           </section>
 
@@ -329,17 +332,17 @@
                 Guide Dogs for the Blind Association website</a>
               </span>
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="assistance-dog-yes" name="assistance-dog" type="radio" value="yes" />
-              <label for="assistance-dog-yes">Yes</label>
-              <input class="radio-question" id="assistance-dogs-no" name="assistance-dog" type="radio" value="no" />
-              <label for="assistance-dogs-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="assistance-dog-yes" name="assistance-dog" type="radio" value="yes" />
+              <label class="radio-label--button" for="assistance-dog-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="assistance-dogs-no" name="assistance-dog" type="radio" value="no" />
+              <label class="radio-label--button" for="assistance-dogs-no">No</label>
             </div>
           </section>
 
           <section class="question-block">
             <label class="question-label">
-              Some title here <i>TODO</i>
+              Can you undertake the below activities?
             </label>
             <p class="question-block__text">
               There are a number of activities shown below that cabin crew
@@ -394,13 +397,18 @@
                 hotel?
               </span>
             </label>
-            <div class="radio-wrapper">
-              <input class="radio-question" id="accom-request-yes" name="accom-request" type="radio" value="yes" />
-              <label for="accom-request-yes">Yes</label>
-              <input class="radio-question" id="accom-request-no" name="accom-request" type="radio" value="no" />
-              <label for="accom-request-no">No</label>
+            <div class="radio-wrapper radio-wrapper--narrow radio-wrapper--button">
+              <input class="radio-question radio-question--button" id="accom-request-yes" name="accom-request" type="radio" value="yes" />
+              <label class="radio-label--button" for="accom-request-yes">Yes</label>
+              <input class="radio-question radio-question--button" id="accom-request-no" name="accom-request" type="radio" value="no" />
+              <label class="radio-label--button" for="accom-request-no">No</label>
             </div>
-            <textarea class="question-textarea" id="accom-textarea"></textarea>
+            <div class="question-block__subpanel" id="accommodation-subpanel">
+              <p class="question-block__text">
+                If yes, please provide further information
+              </p>
+              <textarea class="question-textarea"></textarea>
+            </div>
           </section>
         </section>
 
@@ -461,23 +469,6 @@
           Submit single request
         </a>
       </section>
-
     </div>
-
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous">
-    </script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
-      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-      crossorigin="anonymous">
-    </script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-      integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-      crossorigin="anonymous">
-    </script> -->
   </body>
 </html>

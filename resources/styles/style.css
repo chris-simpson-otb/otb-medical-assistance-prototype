@@ -48,14 +48,17 @@ p {
   padding: 1em;
 }
 
-.question-block--grey {
-  background-color: #ededed;
-  transition: background 0.1s ease-in;
-}
-
 .question-block--blue {
   background-color: #d5eff9;
   margin-bottom: 1em;
+}
+
+.question-block--grey {
+  background-color: #ededed;
+}
+
+.question-block--border-bottom {
+  border-bottom: 2px solid #17317f;
 }
 
 .question-block__title {
@@ -163,6 +166,10 @@ p {
 /* radio buttons */
 .radio-wrapper label {
   margin-right: 1em;
+}
+
+.radio-wrapper--narrow {
+  width: 40%;
 }
 
 .radio-wrapper--button {
@@ -320,50 +327,25 @@ p {
 
 /* hidden panels */
 #accommodation-panel,
+#accommodation-subpanel,
 #flights-panel,
 #medical-equipment-panel,
 #medical-luggage-panel,
-#wheelchair-panel {
-  position: absolute;
-  opacity: 0;
-  top: -9999px;
+#wheelchair-panel-wrapper,
+#wheelchair-panel,
+#wheelchair-dimension-panel {
+  max-height: 0;
+  overflow: hidden;
 }
 
 #accommodation-panel.expanded,
+#accommodation-subpanel.expanded,
 #flights-panel.expanded,
 #medical-equipment-panel.expanded,
 #medical-luggage-panel.expanded,
-#wheelchair-panel.expanded {
-  position: static;
-  opacity: 1;
-  transition: all 0.3s ease-in;
-}
-
-#accommodation-panel .question-block,
-#flights-panel .question-block,
-#wheelchair-panel .question-block {
-  height: 0;
-}
-
-#accommodation-panel.expanded .question-block,
-#flights-panel.expanded .question-block,
-#wheelchair-panel.expanded .question-block {
-  height: auto;
-}
-
-#wheelchair-panel {
-  background-color: #ededed;
-}
-
-/* hidden textareas */
-#accom-textarea {
-  position: absolute;
-  opacity: 0;
-  top: -9999px;
-}
-
-#accom-textarea.expanded {
-  position: static;
-  opacity: 1;
-  transition: all 0.3s ease-in;
+#wheelchair-panel-wrapper.expanded,
+#wheelchair-panel.expanded,
+#wheelchair-dimension-panel.expanded {
+  max-height: 300em;
+  transition: max-height 1.2s ease-in-out;
 }

@@ -26,20 +26,18 @@ window.onload = function() {
     element.yes.addEventListener('change', function(event) {
       if (event.currentTarget.checked) {
         element.panel.classList = 'expanded';
-        element.yes.parentElement.parentElement.classList.add('question-block--grey');
       }
     }, false);
     element.no.addEventListener('change', function(event) {
       if (event.currentTarget.checked) {
         element.panel.classList = '';
-        element.no.parentElement.parentElement.classList.remove('question-block--grey');
       }
     }, false);
   });
 
   var showHideFields = [
     {
-      field: document.getElementById('accom-textarea'),
+      field: document.getElementById('accommodation-subpanel'),
       yes: document.getElementById('accom-request-yes'),
       no: document.getElementById('accom-request-no'),
     },
@@ -52,6 +50,16 @@ window.onload = function() {
       field: document.getElementById('medical-equipment-panel'),
       yes: document.getElementById('medical-equip-yes'),
       no: document.getElementById('medical-equip-no'),
+    },
+    {
+      field: document.getElementById('wheelchair-panel-wrapper'),
+      yes: document.getElementById('long-distance-no'),
+      no: document.getElementById('long-distance-yes'),
+    },
+    {
+      field: document.getElementById('wheelchair-dimension-panel'),
+      yes: document.getElementById('foldable-yes'),
+      no: document.getElementById('foldable-no'),
     },
   ];
 
